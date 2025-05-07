@@ -14,6 +14,7 @@ const Player = () => {
     previous,
     next,
     seekSong,
+    replay,
   } = useContext(PlayerContext);
 
   return (
@@ -60,7 +61,12 @@ const Player = () => {
             src={assets.next_icon}
             alt=""
           />
-          <img className="w-4 cursor-pointer" src={assets.loop_icon} alt="" />
+          <img
+            onClick={replay}
+            className="w-4 cursor-pointer"
+            src={assets.loop_icon}
+            alt=""
+          />
         </div>
         <div className="flex items-center gap-5">
           <p>

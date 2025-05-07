@@ -59,6 +59,12 @@ const PlayerContextProvider = (props) => {
       audioRef.current.duration;
   };
 
+  const replay = () => {
+    audioRef.current.currentTime = 0;
+    audioRef.current.play();
+    setPlayStatus(true);
+  };
+
   useEffect(() => {
     setTimeout(() => {
       audioRef.current.ontimeupdate = () => {
@@ -96,6 +102,7 @@ const PlayerContextProvider = (props) => {
     previous,
     next,
     seekSong,
+    replay,
   };
 
   return (
